@@ -1,0 +1,16 @@
+{
+  "name": "day-2-deliverable-content",
+  "version": "1.0.0",
+  "description": "This is the day 2 deliverable of my 6 months project timeline",
+  "license": "ISC",
+  "author": "Strength Awa",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
