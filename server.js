@@ -28,3 +28,4 @@ app.get('/test-db', async (req, res) => {
 console.log('SUPABASE_URL:', process.env.SUPABASE_URL);
 
 app.listen(5000, () => console.log('Server is running'));
+
