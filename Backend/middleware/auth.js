@@ -10,6 +10,8 @@ const JWKS = createRemoteJWKSet(
 );
 
 export async function verifyJwt(req, res, next) {
+  console.log("🔥 verifyJwt HIT:", req.method, req.originalUrl);
+
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
@@ -26,8 +28,9 @@ export async function verifyJwt(req, res, next) {
     const { payload, protectedHeader } = await jwtVerify(token, JWKS, {
       issuer: SUPABASE_JWT_ISSUER,
       audience: 'authenticated',
-      maxTokenAge: '1h',
     });
+
+    console.log('Token exp (timestamp):', payload.exp, 'Current time:', Math.floor(Date.now()/1000));
 
     console.log('✅ JWT verified');
     console.log('alg:', protectedHeader.alg); // should be ES256
